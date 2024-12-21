@@ -1,21 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Signin = () => {
-    const handleSignin = (e) => {
+const Signup = () => {
+    const handleSignup = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.pass.value;
-        console.log(email, password);
+        const name = e.target.name.value;
+        console.log(email, password, name);
     }
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div>
+            <div className="hero bg-base-200 min-h-screen">
           <div className="hero-content flex-col">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl font-bold">Login now!</h1>
+              <h1 className="text-4xl font-bold">Signup Now!</h1>
             </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-              <form onSubmit={handleSignin} className="card-body">
+              <form onSubmit={handleSignup} className="card-body">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Name</span>
+                  </label>
+                  <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -32,14 +40,15 @@ const Signin = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">Login</button>
+                  <button className="btn btn-primary">signup</button>
                 </div>
               </form>
-              <p>new this web ? <Link to={"/signup"} className='text-blue-700'>Signup</Link></p>
+              <p>Already have an Amount? Please <Link to={'/signin'} className='text-blue-700'>Signin</Link></p>
             </div>
           </div>
+        </div>
         </div>
     );
 };
 
-export default Signin;
+export default Signup;

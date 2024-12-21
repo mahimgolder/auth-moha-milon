@@ -1,11 +1,8 @@
-import React from 'react';
+// import React from 'react';
 
-const Signout = () => {
-    return (
-        <div>
-            Signout.jsx
-        </div>
-    );
-};
+//     return (
+        
+//     );
+// };
 
-export default Signout;
+// export default Signout;
